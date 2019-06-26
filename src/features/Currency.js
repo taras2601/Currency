@@ -2,23 +2,27 @@ import React, { Component } from 'react';
 
 export default class Currency extends Component {
     handleClickButtonUSD = () => {
-        const { setSelectedCurrency } = this.props;
+        const { getCurrency, setSelectedCurrency } = this.props;
+        getCurrency();
         setSelectedCurrency('USD')
     };
 
     handleClickButtonEUR = () => {
-        const { setSelectedCurrency } = this.props;
+        const { getCurrency, setSelectedCurrency } = this.props;
+        getCurrency();
         setSelectedCurrency('EUR')
     };
 
     handleClickButtonRUR = () => {
-        const { setSelectedCurrency } = this.props;
+        const { getCurrency, setSelectedCurrency } = this.props;
+        getCurrency();
         setSelectedCurrency('RUR')
     };
 
     render() {
-        const {selectedCurrency, currentCurrency} = this.props;
+        const { isError, selectedCurrency, currentCurrency } = this.props;
         const loadingMessage = 'Loading...';
+        const error = 'Something went wrong...'
         return (
             <div>
                 <div>Currency {selectedCurrency}</div>
@@ -27,6 +31,7 @@ export default class Currency extends Component {
                 <button onClick={this.handleClickButtonUSD}>USD</button>
                 <button onClick={this.handleClickButtonEUR}>EUR</button>
                 <button onClick={this.handleClickButtonRUR}>RUR</button>
+                <div>{isError ? error : null }</div>
             </div>
         );
     }
