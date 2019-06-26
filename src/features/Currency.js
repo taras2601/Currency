@@ -31,7 +31,7 @@ export default class Currency extends Component {
                 <button onClick={this.handleClickButtonUSD}>USD</button>
                 <button onClick={this.handleClickButtonEUR}>EUR</button>
                 <button onClick={this.handleClickButtonRUR}>RUR</button>
-                <p>{isError ? error : null }</p>
+                <p>{isError ? error : null}</p>
             </div>
         );
     }
