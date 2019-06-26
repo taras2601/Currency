@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 
 export default class Currency extends Component {
     handleClickButtonUSD = () => {
-        const { getCurrency, setSelectedCurrency } = this.props;
-        getCurrency();
+        const { fetchCurrency, setSelectedCurrency } = this.props;
+        fetchCurrency();
         setSelectedCurrency('USD')
     };
 
     handleClickButtonEUR = () => {
-        const { getCurrency, setSelectedCurrency } = this.props;
-        getCurrency();
+        const { fetchCurrency, setSelectedCurrency } = this.props;
+        fetchCurrency();
         setSelectedCurrency('EUR')
     };
 
     handleClickButtonRUR = () => {
-        const { getCurrency, setSelectedCurrency } = this.props;
-        getCurrency();
+        const { fetchCurrency, setSelectedCurrency } = this.props;
+        fetchCurrency();
         setSelectedCurrency('RUR')
     };
 

@@ -12,7 +12,7 @@ export default class CurrencyContainer extends Component {
         isError: false,
     };
 
-    getCurrency =() => {
+    fetchCurrency =() => {
         fetch('https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5')
             .then(res => res.json())
             .then(res => {
@@ -33,7 +33,7 @@ export default class CurrencyContainer extends Component {
         return (
             <div>
                 <Currency
-                    getCurrency={this.getCurrency}
+                    fetchCurrency={this.fetchCurrency}
                     selectedCurrency={this.state.selectedCurrency}
                     currentCurrency={currentCurrency}
                     setSelectedCurrency={this.setSelectedCurrency}
